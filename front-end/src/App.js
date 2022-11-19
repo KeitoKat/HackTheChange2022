@@ -1,29 +1,32 @@
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import Header from './Header.js';
 
+//Pages
+import HomePage from './HomePage/HomePage'
+import Users from './Users'
+
 function App() {
+
+  // All paths
+  const AllPaths = [
+    { // Home Page
+      name: "Home Page",
+      path: "/homepage",
+      component: HomePage
+    },
+    { // Users
+      name: "Users",
+      path: "/users",
+      component: Users
+    }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Header></Header>
-        <Header></Header>
-        <Header></Header>
-        <Header></Header>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {AllPaths.map((e) => (<Route path={e.path} component={e.component}/>))}
+    </Router>
   );
 }
 
