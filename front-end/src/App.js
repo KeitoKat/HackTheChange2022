@@ -37,9 +37,9 @@ function App() {
           alt="Refuge Me"
         />
         <h1>Find home again</h1> */}
-    {/* <Users/> */}
+    <Users/>
     <User/>
-    {/* <Login/> */}
+    <Login/>
 
     {/* <Router>
       <Routes>

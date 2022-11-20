@@ -64,11 +64,12 @@ const Users = () => {
                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
                             class="img-thumbnail rounded-3"
                             style={{ height: "15rem", objectFit: "cover"}}
-                            alt={host.name.first}
+                            alt={host.hostName}
                             />
                                 <div class="card-body" >
-                                    <h5 class="card-title">{host.name.first}</h5>
-                                    <p class="card-text"> Country: {host.country}, Hosting: {host.family_size}</p>
+                                    <h5 class="card-title">{host.hostName}</h5>
+                                    <p class="card-text"> Languages I can speak: {host.languages}</p>
+                                    <p class="card-text"> Max family size I can host: {host.familySize}</p>
                                     <p class="card-text">Some descriptions about the host (and their family)</p>
                                 </div>
                             </div>
