@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useCallback } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 
@@ -7,21 +7,28 @@ import axios from "axios";
 const Users = () => {
 
     //USE STATE
-    const [hosts, setHosts] = useState([]);
+    const [hosts, setHosts] = useState({});
     const [loading, setLoading] = useState(false);
     
-    //USE EFFECT
-    useEffect(() => Fetch(), []);
-
-    //AXIOS FUNCTIONS
-    const Fetch = async () => {
+     //AXIOS FUNCTIONS
+     const fetch = useCallback(async () => {
         var info = await axios.get(
-            "https://randomuser.me/api/"
-            // "http://localhost:8000/users" //our local host
+           //"https://randomuser.me/api/"
+            "http://localhost:8000/users" //our local host
         );
-        setHosts(info.data);
-        setLoading(true)
-    };
+        console.log('What is info.data', info.data);
+        setHosts(info.data)
+        console.log('What is hosts', hosts);
+        setLoading(true);
+        }, [hosts.length]);
+
+
+    //USE EFFECT
+    useEffect(() => {fetch()}, [fetch]);
+    
+   
+  
+
 
     //HANDLER FUNCTIONS
     const selectedUser = (e, selectedHost) => {
@@ -50,26 +57,8 @@ const Users = () => {
         {/* CARDS */}
 
         <div class="container ">
-            <div class="row">
-                {
-                    loading && hosts.map((host) => (
-                        <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
-                            <div class="card" onClick={(e) => selectedUser(e, host)}>
-                            <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
-                            class="img-thumbnail rounded-3"
-                            style={{ height: "15rem", objectFit: "cover"}}
-                            alt={host.name.first}
-                            />
-                                <div class="card-body" >
-                                    <h5 class="card-title">{host.name.first}</h5>
-                                    {/* <p class="card-text"> Country: {host.country}, Hosting: {host.family_size}</p> */}
-                                    <p class="card-text">Some descriptions about the host (and their family)</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    ))}
+             <div class="row">
+        
 
                 {/* SAMPLE CARD */}
                 <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
@@ -77,6 +66,7 @@ const Users = () => {
 
                     <div class="card">
                     <img
+                    alt="profile"
                     src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
                     class="img-thumbnail rounded-3"
                     style={{ height: "15rem", objectFit: "cover"}}
@@ -89,10 +79,31 @@ const Users = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </Fragment>
     ) 
 }
 
 export default Users;
+
+
+// {
+//     loading && hosts.map((host) => (
+//         <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
+//             <div class="card" onClick={(e) => selectedUser(e, host)}>
+//             <img
+//             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
+//             class="img-thumbnail rounded-3"
+//             style={{ height: "15rem", objectFit: "cover"}}
+//             alt={host.name.first}
+//             />
+//                 <div class="card-body" >
+//                     <h5 class="card-title">{host.name.first}</h5>
+//                     {/* <p class="card-text"> Country: {host.country}, Hosting: {host.family_size}</p> */}
+//                     <p class="card-text">Some descriptions about the host (and their family)</p>
+//                 </div>
+//             </div>
+//         </div>
+
+//     ))}
