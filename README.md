@@ -4,7 +4,7 @@
 We initially drew inspiration from the UN global issues [https://www.un.org/en/global-issues]. Given the recent political issues in the East, we have also withnessed many call-to-action that aims to help refugees escape the Russo-Ukrainian War.
 
 # What it does
-Our website is an Airbnb-like platform for refugee who are looking for the closest, safest or most-welcoming home to shelter themselves. We match each user to host families based on basic features like: country and language used.
+Our website is an Airbnb-like platform for refugees who are looking for the closest, safest or most-welcoming home to shelter themselves. We match each user to host families based on basic features like: country and language used.
 
 # How we built it
 We made the website using:
