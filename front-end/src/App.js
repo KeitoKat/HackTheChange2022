@@ -1,10 +1,11 @@
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, Switch} from "react-router-dom";
 import './App.css';
 
 //Pages
 import Users from './Users/Users.js'
 import User from './Users/User.js'
 import Login from './Login/Login.js'
+import { Container } from "@mui/system";
 
 function App() {
 
@@ -13,43 +14,43 @@ function App() {
     { // Users
       name: "Users",
       path: "/users",
-      component: Users
+      component: <Users/>
     },
     { // User
       name: "User",
       path: "/user",
-      component: User
+      component: <User/>
     },
     { // Login
       name: "Login",
       path: "/login",
-      component: Login
+      component: <Login/>
     }
   ]
 
   return (
-  <>
-    {/* <div style={{ margin: "1rem"}}>
+    <Routes>
+      <Route path="/" element={<Users />}>     
+      </Route>
+      <Route path="/users" element={<Users />}>     
+      </Route>
+      <Route path="/user" element={<User />}>     
+      </Route>
+      <Route path="/login" element={<Login />}>     
+      </Route>
+    </Routes>
+  );
+}
+
+export default App;
+
+
+{/* <div style={{ margin: "1rem"}}>
         <img
           src="https://static.vecteezy.com/system/resources/previews/001/200/294/original/house-png.png"
           class="rounded-3"
           style={{ height: "5rem" }}
           alt="Refuge Me"
         />
-        <h1>Find home again</h1> */}
-    <Users/>
-    <User/>
-    <Login/>
-
-    {/* <Router>
-      <Routes>
-        {AllPaths.map((e) => (<Route path={e.path} component={e.component}/>))}
-      </Routes>
-    </Router> */}
-
-    {/* </div> */}
-  </>
-  );
-}
-
-export default App;
+         <h1>Find home again</h1> 
+</div> */}
