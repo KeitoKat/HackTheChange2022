@@ -79,7 +79,7 @@ const Login = () => {
               <label for="floatingTextarea2">Password</label>
             </div>
             {/* LOG-IN BUTTON */}
-            <div class="d-grid gap-2" style={{paddingBottom: "0.8rem"}}>
+            <div >
               <button class="btn btn-primary" type="submit" value="Submit">
                 Log In
               </button>

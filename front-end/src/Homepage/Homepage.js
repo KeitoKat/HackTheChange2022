@@ -15,6 +15,11 @@ const Homepage = () => {
   
     navigate('/Users');
   };
+  const navigateToHosts = () => {
+  
+    navigate('/Login');
+  };
+
 
   return (
         <div className="App">
@@ -33,7 +38,7 @@ const Homepage = () => {
               <tr>
                 <td><button onClick={navigateToUsers}>guest</button></td>
                 <td><p> or a </p></td>
-                <td><button>host</button></td>
+                <td><button onClick={navigateToHosts}>host</button></td>
               </tr>
             </table>
           </header>
