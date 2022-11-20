@@ -1,8 +1,22 @@
 import React, { Fragment, useState } from "react";
 import Logo from './Logo.js';
+import { useNavigate } from "react-router-dom";
+
+
+
+
+
 
 const Homepage = () => {
-    return (
+    
+  const navigate = useNavigate();
+  
+  const navigateToUsers = () => {
+  
+    navigate('/Users');
+  };
+
+  return (
         <div className="App">
           <nav>
             <div id="Icons">
@@ -17,7 +31,7 @@ const Homepage = () => {
                 <td colspan='3'><b>Welcome!</b> Are you a</td>
               </tr>
               <tr>
-                <td><button>guest</button></td>
+                <td><button onClick={navigateToUsers}>guest</button></td>
                 <td><p> or a </p></td>
                 <td><button>host</button></td>
               </tr>
