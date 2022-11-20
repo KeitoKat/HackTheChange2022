@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import './App.css';
 
 //Pages
-import HomePage from './HomePage/HomePage.js'
 import Users from './Users/Users.js'
 import Login from './Login/Login.js'
 
@@ -10,11 +9,6 @@ function App() {
 
   // All paths
   const AllPaths = [
-    { // Home Page
-      name: "Home Page",
-      path: "/homepage",
-      component: HomePage
-    },
     { // Users
       name: "Users",
       path: "/users",
@@ -37,7 +31,6 @@ function App() {
           alt="Refuge Me"
         />
         <h1>Find home again</h1>
-    {/* <HomePage/> */}
     <Users/>
     {/* <Login/> */}
 
