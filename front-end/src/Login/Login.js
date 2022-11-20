@@ -4,9 +4,9 @@ import { Navigate } from "react-router-dom";
 const Homepage = () => {
   //INFO HOLDER
   var registeredUsers = [
-    { email: "khammy@gmail.com", password: "KM1234" },
-    { email: "rora@gmail.com", password: "RR1234" },
-    { email: "dom@gmail.com", password: "DM1234" }
+    { email: "some@gmail.com", password: "1F2344" },
+    { email: "one@gmail.com", password: "1245D55" },
+    { email: "two@gmail.com", password: "124C556" }
   ];
   //USESTATE
   const [isVerified, setIsVerified] = useState(false);
