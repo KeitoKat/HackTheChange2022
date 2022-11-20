@@ -2,13 +2,15 @@ import React, { Fragment, useState, useEffect, useCallback } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 
-// import User from "User"
+import User from "./User.js"
 
 const Users = () => {
 
     //USE STATE
+    const [host, setHost] = useState();
     const [hosts, setHosts] = useState({});
     const [loading, setLoading] = useState(false);
+    const [selecHost, setSelecHost] = useState();
     
      //AXIOS FUNCTIONS
      const fetch = useCallback(async () => {
@@ -30,8 +32,12 @@ const Users = () => {
 
     //HANDLER FUNCTIONS
     const selectedUser = (e, selectedHost) => {
-        // <User(selectedHost)/> //!!! not created yet
-        // navigate('/'{selectedHost.id}) //!!! not created yet
+        <div>
+            alert("selected host:", selectedHost)
+            setSelecHost(selectedHost);
+            <User id={host}/>
+            {/* <Navigate to={host.id} replace={true}/> */}
+        </div>
     };
 
 
@@ -58,19 +64,25 @@ const Users = () => {
             <div class="row">
                 {
                     loading && hosts.map((host) => (
-                        <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
-                            <div class="card" onClick={(e) => selectedUser(e, host)}>
-                            <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
-                            class="img-thumbnail rounded-3"
-                            style={{ height: "15rem", objectFit: "cover"}}
-                            alt={host.hostName}
-                            />
-                                <div class="card-body" >
-                                    <h5 class="card-title">{host.hostName}</h5>
-                                    <p class="card-text"> Languages I can speak: {host.languages}</p>
-                                    <p class="card-text"> Max family size I can host: {host.familySize}</p>
-                                    <p class="card-text">Some descriptions about the host (and their family)</p>
+                        <div>
+                            setHost(host)
+                            <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
+                                <div class="card" 
+                                //  
+                                onClick={() => alert("Hello from here")}>
+                                
+                                <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
+                                class="img-thumbnail rounded-3"
+                                style={{ height: "15rem", objectFit: "cover"}}
+                                alt={host.hostName}
+                                />
+                                    <div class="card-body" >
+                                        <h5 class="card-title">{host.hostName}</h5>
+                                        <p class="card-text"> Languages I can speak: {host.languages}</p>
+                                        <p class="card-text"> Max family size I can host: {host.familySize}</p>
+                                        <p class="card-text">Some descriptions about the host (and their family)</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +99,7 @@ const Users = () => {
                     src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
                     class="img-thumbnail rounded-3"
                     style={{ height: "15rem", objectFit: "cover"}}
-                    // alt={host.name}
+                    alt="host's profile image"
                     />
                         <div class="card-body" >
                             <h5 class="card-title">Name of the host</h5>
