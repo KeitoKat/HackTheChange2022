@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  position: sticky;
+  top: 0;
+  height: 7vh;
+  background-color: #040F0F;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#Icons {
+  justify-content: baseline;
+}
+
+button {
+  justify-content: center;
+}
+
+header {
+  background: url(anders-jilden-cYrMQA7a3Wc-unsplash.jpg);
+  min-height: 93vh;
+  background-position: center;
+}
+
+.App-header, button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header h1 {
+  margin: 25vh 0 2vh 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header table {
+  margin-top: 40vh;
+  padding: 3vh;
+  background-color: #040F0F;
+  border-radius: 5vh;
+  text-align: center;
+}
+
+button {
+  min-height: 6vh;
+  min-width: 15vw;
+  margin: 2vh;
+  border: none;
+  border-radius: 1.5vh;
+  background: #040F0F;
+  border: 3px solid rgba(255, 255, 255, 0.75);
+  transition: 500ms;
+}
+
+button:hover {
+  color: #8fbaff;
+  border: 3px solid #8fbaff;
 }

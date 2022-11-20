@@ -1,6 +1,6 @@
 function Header() {
     return(
-        <h1>Hacking!!!</h1>
+        <h1>Header</h1>
     )
 }
 
