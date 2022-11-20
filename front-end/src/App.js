@@ -23,14 +23,14 @@ function App() {
 
   return (
   <>
-    <div style={{ margin: "1rem"}}>
+    {/* <div style={{ margin: "1rem"}}>
         <img
           src="https://static.vecteezy.com/system/resources/previews/001/200/294/original/house-png.png"
           class="rounded-3"
           style={{ height: "5rem" }}
           alt="Refuge Me"
         />
-        <h1>Find home again</h1>
+        <h1>Find home again</h1> */}
     <Users/>
     {/* <Login/> */}
 
@@ -40,7 +40,7 @@ function App() {
       </Routes>
     </Router> */}
 
-    </div>
+    {/* </div> */}
   </>
   );
 }
