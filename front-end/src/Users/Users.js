@@ -64,22 +64,25 @@ const Users = () => {
             <div class="row">
                 {
                     loading && hosts.map((host) => (
-                        setHost(host)
-                        <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
-                            <div class="card" onClick={(e) => selectedUser(e, host)}>
-                            {/* onClick={() => alert("Hello from here")}> */}
-                             
-                            <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
-                            class="img-thumbnail rounded-3"
-                            style={{ height: "15rem", objectFit: "cover"}}
-                            alt={host.hostName}
-                            />
-                                <div class="card-body" >
-                                    <h5 class="card-title">{host.hostName}</h5>
-                                    <p class="card-text"> Languages I can speak: {host.languages}</p>
-                                    <p class="card-text"> Max family size I can host: {host.familySize}</p>
-                                    <p class="card-text">Some descriptions about the host (and their family)</p>
+                        <div>
+                            setHost(host)
+                            <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
+                                <div class="card" 
+                                //  
+                                onClick={() => alert("Hello from here")}>
+                                
+                                <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
+                                class="img-thumbnail rounded-3"
+                                style={{ height: "15rem", objectFit: "cover"}}
+                                alt={host.hostName}
+                                />
+                                    <div class="card-body" >
+                                        <h5 class="card-title">{host.hostName}</h5>
+                                        <p class="card-text"> Languages I can speak: {host.languages}</p>
+                                        <p class="card-text"> Max family size I can host: {host.familySize}</p>
+                                        <p class="card-text">Some descriptions about the host (and their family)</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
