@@ -17,7 +17,7 @@ function App() {
     },
     { // User
       name: "User",
-      path: "/user",
+      path: "/user:id",
       component: User
     },
     { // Login
@@ -39,7 +39,7 @@ function App() {
         <h1>Find home again</h1> */}
     <Users/>
     <User/>
-    <Login/>
+    {/* <Login/> */}
 
     {/* <Router>
       <Routes>
