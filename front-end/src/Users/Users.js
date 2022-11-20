@@ -16,9 +16,9 @@ const Users = () => {
     //AXIOS FUNCTIONS
     const Fetch = async () => {
         var info = await axios.get(
-            "https://randomuser.me/api/"
-            // "http://localhost:8000/users" //our local host
+            "http://localhost:8000/users" //our local host
         );
+        console.log(info)
         setHosts(info.data);
         setLoading(true)
     };
@@ -63,7 +63,7 @@ const Users = () => {
                             />
                                 <div class="card-body" >
                                     <h5 class="card-title">{host.name.first}</h5>
-                                    {/* <p class="card-text"> Country: {host.country}, Hosting: {host.family_size}</p> */}
+                                    <p class="card-text"> Country: {host.country}, Hosting: {host.family_size}</p>
                                     <p class="card-text">Some descriptions about the host (and their family)</p>
                                 </div>
                             </div>
