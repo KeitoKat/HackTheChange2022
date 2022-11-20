@@ -49,7 +49,7 @@ const Users = () => {
 
         {/* CARDS */}
 
-        <div class="container ">
+        <div class="container">
             <div class="row">
                 {
                     loading && hosts.map((host) => (

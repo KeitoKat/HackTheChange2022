@@ -3,6 +3,7 @@ import './App.css';
 
 //Pages
 import Users from './Users/Users.js'
+import User from './Users/User.js'
 import Login from './Login/Login.js'
 
 function App() {
@@ -13,6 +14,11 @@ function App() {
       name: "Users",
       path: "/users",
       component: Users
+    },
+    { // User
+      name: "User",
+      path: "/user",
+      component: User
     },
     { // Login
       name: "Login",
@@ -31,8 +37,9 @@ function App() {
           alt="Refuge Me"
         />
         <h1>Find home again</h1> */}
-    <Users/>
-    <Login/>
+    {/* <Users/> */}
+    <User/>
+    {/* <Login/> */}
 
     {/* <Router>
       <Routes>
