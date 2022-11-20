@@ -1,7 +1,7 @@
 # HackTheChange2022
 ## Important Links
-Devpost (20-Nov-2022): https://devpost.com/software/refuge-me
-Figma: https://www.figma.com/file/yptS8QXgZCCBgcYnLSbCb4/Refuge-Me?node-id=0%3A1&t=z4KuznoaMdc67iLX-1
+- Devpost (20-Nov-2022): [https://devpost.com/software/refuge-me]
+- Figma: [https://www.figma.com/file/yptS8QXgZCCBgcYnLSbCb4/Refuge-Me?node-id=0%3A1&t=z4KuznoaMdc67iLX-1]
 
 
 # Inspiration
