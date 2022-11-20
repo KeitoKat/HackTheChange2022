@@ -1,4 +1,8 @@
 # HackTheChange2022
+## Important Links
+Devpost (20-Nov-2022): https://devpost.com/software/refuge-me
+Figma: https://www.figma.com/file/yptS8QXgZCCBgcYnLSbCb4/Refuge-Me?node-id=0%3A1&t=z4KuznoaMdc67iLX-1
+
 
 # Inspiration
 We initially drew inspiration from the UN global issues [https://www.un.org/en/global-issues]. Given the recent political issues in the East, we have also withnessed many call-to-action that aims to help refugees escape the Russo-Ukrainian War.
