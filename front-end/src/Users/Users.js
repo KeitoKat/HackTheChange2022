@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useCallback } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 
@@ -7,21 +7,26 @@ import axios from "axios";
 const Users = () => {
 
     //USE STATE
-    const [hosts, setHosts] = useState([]);
+    const [hosts, setHosts] = useState({});
     const [loading, setLoading] = useState(false);
     
-    //USE EFFECT
-    useEffect(() => Fetch(), []);
-
-    //AXIOS FUNCTIONS
-    const Fetch = async () => {
+     //AXIOS FUNCTIONS
+     const fetch = useCallback(async () => {
         var info = await axios.get(
             "http://localhost:8000/users" //our local host
         );
-        console.log(info)
-        setHosts(info.data);
-        setLoading(true)
-    };
+        console.log('What is info.data', info.data);
+        setHosts(info.data)
+        console.log('What is hosts', hosts);
+        setLoading(true);
+        }, [hosts.length]);
+
+
+    //USE EFFECT
+    useEffect(() => {fetch()}, [fetch]);
+    
+   
+
 
     //HANDLER FUNCTIONS
     const selectedUser = (e, selectedHost) => {
@@ -77,6 +82,7 @@ const Users = () => {
 
                     <div class="card">
                     <img
+                    alt="profile"
                     src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
                     class="img-thumbnail rounded-3"
                     style={{ height: "15rem", objectFit: "cover"}}
@@ -89,10 +95,11 @@ const Users = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </Fragment>
     ) 
 }
 
 export default Users;
+
