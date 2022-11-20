@@ -70,7 +70,7 @@ const User = (prop) => {
                 </div>
 
                 {/* HOST INFO */}
-                <div class="container m-5">
+                <div class="container my-5">
                     <div class="row">
                         <div class="col">
                             <div class="row">
