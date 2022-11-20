@@ -13,7 +13,6 @@ const Users = () => {
      //AXIOS FUNCTIONS
      const fetch = useCallback(async () => {
         var info = await axios.get(
-           //"https://randomuser.me/api/"
             "http://localhost:8000/users" //our local host
         );
         console.log('What is info.data', info.data);
@@ -27,7 +26,6 @@ const Users = () => {
     useEffect(() => {fetch()}, [fetch]);
     
    
-  
 
 
     //HANDLER FUNCTIONS
@@ -56,9 +54,27 @@ const Users = () => {
 
         {/* CARDS */}
 
-        <div class="container ">
-             <div class="row">
-        
+        <div class="container">
+            <div class="row">
+                {
+                    loading && hosts.map((host) => (
+                        <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
+                            <div class="card" onClick={(e) => selectedUser(e, host)}>
+                            <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
+                            class="img-thumbnail rounded-3"
+                            style={{ height: "15rem", objectFit: "cover"}}
+                            alt={host.name.first}
+                            />
+                                <div class="card-body" >
+                                    <h5 class="card-title">{host.name.first}</h5>
+                                    <p class="card-text"> Country: {host.country}, Hosting: {host.family_size}</p>
+                                    <p class="card-text">Some descriptions about the host (and their family)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    ))}
 
                 {/* SAMPLE CARD */}
                 <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
@@ -87,23 +103,3 @@ const Users = () => {
 
 export default Users;
 
-
-// {
-//     loading && hosts.map((host) => (
-//         <div style={{ width: "20rem", padding: "1rem"}} class="d-flex justify-content-center vstack gap-8">
-//             <div class="card" onClick={(e) => selectedUser(e, host)}>
-//             <img
-//             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"
-//             class="img-thumbnail rounded-3"
-//             style={{ height: "15rem", objectFit: "cover"}}
-//             alt={host.name.first}
-//             />
-//                 <div class="card-body" >
-//                     <h5 class="card-title">{host.name.first}</h5>
-//                     {/* <p class="card-text"> Country: {host.country}, Hosting: {host.family_size}</p> */}
-//                     <p class="card-text">Some descriptions about the host (and their family)</p>
-//                 </div>
-//             </div>
-//         </div>
-
-//     ))}
